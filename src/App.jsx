@@ -1,4 +1,4 @@
-
+import About from "./pages/About";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
@@ -19,7 +19,7 @@ export default function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<Placeholder title="About Us" />} />
+        <Route path="/about" element={<About />} />
         <Route path="/services" element={<Placeholder title="Our Services" />} />
         <Route path="/projects" element={<Placeholder title="Our Projects" />} />
         <Route path="/contact" element={<Placeholder title="Contact Us" />} />
