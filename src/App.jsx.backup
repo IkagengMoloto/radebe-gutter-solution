@@ -1,0 +1,67 @@
+
+import { useState } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { Menu, X, Phone } from "lucide-react";
+
+export default function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const links = [
+    { name: "Home", path: "/" },
+    { name: "About Us", path: "/about" },
+    { name: "Services", path: "/services" },
+    { name: "Projects", path: "/projects" },
+    { name: "Contact", path: "/contact" }
+  ];
+
+  return (
+    <header className="navbar">
+      <Link
+        to="/"
+        className="brand"
+        aria-label="Radebe Gutter Solution Home"
+        onClick={() => setMenuOpen(false)}
+      >
+        <img
+          src="/images/radebe-logo.png"
+          alt="Radebe Gutter Solution"
+          className="brand-logo"
+        />
+      </Link>
+
+      <nav
+        id="primary-navigation"
+        className={menuOpen ? "nav-links active" : "nav-links"}
+        aria-label="Main navigation"
+      >
+        {links.map((link) => (
+          <NavLink
+            key={link.path}
+            to={link.path}
+            end={link.path === "/"}
+            onClick={() => setMenuOpen(false)}
+            className={({ isActive }) => isActive ? "active-link" : ""}
+          >
+            {link.name}
+          </NavLink>
+        ))}
+      </nav>
+
+      <a href="tel:0796322508" className="nav-call">
+        <Phone size={17} />
+        079 632 2508
+      </a>
+
+      <button
+        type="button"
+        className="menu-toggle"
+        onClick={() => setMenuOpen(!menuOpen)}
+        aria-label={menuOpen ? "Close navigation" : "Open navigation"}
+        aria-expanded={menuOpen}
+        aria-controls="primary-navigation"
+      >
+        {menuOpen ? <X size={26} /> : <Menu size={26} />}
+      </button>
+    </header>
+  );
+}

@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { Menu, X, Phone } from "lucide-react";
 import "./Navbar.css";
 
@@ -17,20 +17,36 @@ export default function Navbar() {
 
   return (
     <header className="navbar">
-      <Link to="/" className="brand">
-        RADEBE GUTTER
-        <span>SOLUTION</span>
+      <Link
+        to="/"
+        className="brand"
+        aria-label="Radebe Gutter Solution Home"
+        onClick={() => setMenuOpen(false)}
+      >
+        <img
+          src="/images/radebe-logo.png"
+          alt="Radebe Gutter Solution"
+          className="brand-logo"
+        />
       </Link>
 
-      <nav className={menuOpen ? "nav-links active" : "nav-links"}>
+      <nav
+        id="primary-navigation"
+        className={menuOpen ? "nav-links active" : "nav-links"}
+        aria-label="Main navigation"
+      >
         {links.map((link) => (
-          <Link
+          <NavLink
             key={link.path}
             to={link.path}
+            end={link.path === "/"}
             onClick={() => setMenuOpen(false)}
+            className={({ isActive }) =>
+              isActive ? "active-link" : ""
+            }
           >
             {link.name}
-          </Link>
+          </NavLink>
         ))}
       </nav>
 
@@ -40,12 +56,14 @@ export default function Navbar() {
       </a>
 
       <button
+        type="button"
         className="menu-toggle"
         onClick={() => setMenuOpen(!menuOpen)}
-        aria-label="Toggle navigation"
+        aria-label={menuOpen ? "Close navigation" : "Open navigation"}
         aria-expanded={menuOpen}
+        aria-controls="primary-navigation"
       >
-        {menuOpen ? <X /> : <Menu />}
+        {menuOpen ? <X size={26} /> : <Menu size={26} />}
       </button>
     </header>
   );
