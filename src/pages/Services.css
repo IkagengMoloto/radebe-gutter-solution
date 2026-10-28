@@ -1,0 +1,271 @@
+
+.services-page {
+  color: #14283e;
+}
+
+.services-banner {
+  background: linear-gradient(110deg, #14283e, #304c65);
+  color: white;
+  padding: 90px 8%;
+  text-align: center;
+}
+
+.services-banner span,
+.services-label {
+  color: #c89b42;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.services-banner h1 {
+  font-size: clamp(34px, 4vw, 54px);
+  margin: 15px 0;
+}
+
+.services-banner p {
+  max-width: 650px;
+  margin: auto;
+  line-height: 1.8;
+}
+
+.services-intro {
+  text-align: center;
+  padding: 75px 8% 35px;
+}
+
+.services-intro h2,
+.services-benefits h2,
+.services-colours h2 {
+  font-size: clamp(28px, 3vw, 40px);
+}
+
+.services-intro p {
+  max-width: 720px;
+  margin: auto;
+  color: #596575;
+  line-height: 1.8;
+}
+
+.services-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
+  padding: 35px 8% 90px;
+}
+
+.services-detail-card {
+  position: relative;
+  background: #fff;
+  border: 1px solid #e2e7ec;
+  border-radius: 10px;
+  padding: 32px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.services-detail-card.featured {
+  border: 2px solid #d4a84b;
+}
+
+.featured-label {
+  position: absolute;
+  top: -13px;
+  left: 24px;
+  background: #d4a84b;
+  padding: 7px 12px;
+  font-size: 11px;
+  font-weight: 800;
+  border-radius: 4px;
+}
+
+.services-icon {
+  color: #c89b42;
+  margin-bottom: 14px;
+}
+
+.services-detail-card h3 {
+  font-size: 21px;
+  margin: 10px 0;
+}
+
+.services-detail-card p {
+  color: #596575;
+  line-height: 1.7;
+}
+
+.services-detail-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.services-detail-card li {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin-bottom: 13px;
+  font-size: 14px;
+}
+
+.services-detail-card li svg {
+  flex-shrink: 0;
+  color: #b68a38;
+}
+
+.services-price {
+  font-size: 21px;
+  font-weight: 800;
+  margin: 5px 0 15px;
+}
+
+.services-price small {
+  display: block;
+  font-size: 12px;
+  color: #64748b;
+  font-weight: 400;
+  margin-top: 5px;
+}
+
+.services-quote {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: #14283e;
+  font-weight: 700;
+  text-decoration: none;
+  margin-top: auto;
+  padding-top: 15px;
+}
+
+.services-benefits {
+  background: #f5f7fa;
+  padding: 80px 8%;
+}
+
+.services-benefits-heading {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.services-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.services-benefits-grid > div {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.services-benefits-grid svg {
+  color: #c89b42;
+}
+
+.services-benefits-grid p {
+  color: #596575;
+  line-height: 1.7;
+}
+
+.services-colours {
+  padding: 80px 8%;
+  text-align: center;
+}
+
+.services-colours > p {
+  color: #596575;
+}
+
+.gutter-colours {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 35px;
+  margin-top: 35px;
+}
+
+.gutter-colour {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  font-weight: 600;
+}
+
+.colour-swatch {
+  width: 95px;
+  height: 95px;
+  border-radius: 50%;
+  border: 1px solid #cbd5e1;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.colour-note {
+  font-size: 12px;
+  margin-top: 25px;
+}
+
+.services-cta {
+  background: #14283e;
+  color: white;
+  text-align: center;
+  padding: 80px 8%;
+}
+
+.services-cta p {
+  line-height: 1.7;
+}
+
+.services-cta-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 30px;
+}
+
+.services-whatsapp,
+.services-call {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 24px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 700;
+}
+
+.services-whatsapp {
+  background: #d4a84b;
+  color: #14283e;
+}
+
+.services-call {
+  border: 1px solid white;
+  color: white;
+}
+
+@media (max-width: 1000px) {
+  .services-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .services-list,
+  .services-benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .services-list {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+
+  .services-detail-card {
+    padding: 25px;
+  }
+}

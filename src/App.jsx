@@ -1,3 +1,4 @@
+import Services from "./pages/Services";
 import About from "./pages/About";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
@@ -20,7 +21,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/services" element={<Placeholder title="Our Services" />} />
+        <Route path="/services" element={<Services />} />
         <Route path="/projects" element={<Placeholder title="Our Projects" />} />
         <Route path="/contact" element={<Placeholder title="Contact Us" />} />
       </Routes>
